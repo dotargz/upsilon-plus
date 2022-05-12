@@ -1,0 +1,82 @@
+html, body {
+  font-family: 'Noto Serif', serif;
+}
+
+#container-flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+  justify-content: center;
+  text-align: left;
+}
+
+#main-flex {
+  max-width: 30vw;
+  min-width: 370px;
+}
+
+#nav-flex {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-items: left;
+  justify-content: flex-start;
+}
+
+
+.nav-link {
+  margin-left: 30px;
+  text-decoration: none;
+  font-family: 'Noto Sans', sans-serif;
+}
+
+a {
+  text-decoration: underline;
+  color: inherit;
+  background-color: inherit;
+}
+
+.hover-link {
+ width: max-content;
+}
+
+.hover-link:hover {
+  color: white;
+  background-color: black;
+}
+hr {
+  border: 1px solid black;
+  background-color:black;
+  width: 99%;
+}
+
+#footer {
+  margin-top: 10vh;
+}
+
+
+#footer-flex {
+  display: flex;
+  flex-direction: row;
+}
+
+#footer-left {
+  justify-self: left;
+  width: max-content;
+}
+.footer-link {
+
+  margin:0;
+  padding:0;
+  text-align: right;
+}
+#footer-right {
+  padding:0;
+  justify-self: right;
+  margin-left: auto;
+  margin-right: 0.5vw;
+  width: max-content;
+  text-align: right;
+}

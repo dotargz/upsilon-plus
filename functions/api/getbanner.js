@@ -8,10 +8,13 @@ export async function onRequest(context) {
     next, // used for middleware or to fetch assets
     data, // arbitrary space for passing data between middlewares
   } = context;
+  const { searchParams } = new URL(request.url);
+  let user = searchParams.get('user');
+  
 
   return new Response(`
 <html>
-Hello, world! ${request}
+Hello, world! ${user}
 </html>
 `);
 }

@@ -11,10 +11,27 @@ export async function onRequest(context) {
   const { searchParams } = new URL(request.url);
   let user = searchParams.get('user');
   
-
-  return new Response(`
-<html>
-Hello, world! ${user}
+  const html = `
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hello!</title>
+    <meta name="description" content="description"/>
+    <meta name="author" content="author" />
+    <meta name="keywords" content="keywords" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="./style.css" type="text/css" />
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <p>you requested ${user}</p>
+  </body>
 </html>
-`);
+`
+  return new Response(html, {
+    headers: {
+      'content-type': 'text/html;charset=UTF-8',
+    },
+  });
 }

@@ -134,7 +134,7 @@ export async function onRequest(context) {
     border: 3px solid #${bordercolor};
     background-color: #${backcolor};
     border-radius: 5px;
-    width: calc(100%);
+    width: 100%;
     height: 85px;
     text-align: center;
     color: #${forecolor};

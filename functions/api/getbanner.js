@@ -47,17 +47,17 @@ export async function onRequest(context) {
   // now for custom css support, aaaaaaaaaaaaaa
   let forecolor;
   let backcolor;
-  if (searchParams.get('forecolor') != null) {
+  if (searchParams.get('forecolor') == null) {
+    forecolor = "fff";
+  }
+  else {
     forecolor = searchParams.get('forecolor');
   }
-  else {
-    forecolor = "ffffff";
+  if (searchParams.get('backcolor') == null) {
+    backcolor = "000";
   }
-  if (searchParams.get('backcolor') != null) {
+  else {
     backcolor = searchParams.get('backcolor');
-  }
-  else {
-    backcolor = "000000";
   }
   const html = `
   <!DOCTYPE html>

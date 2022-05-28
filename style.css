@@ -80,3 +80,12 @@ hr {
   width: max-content;
   text-align: right;
 }
+
+#username {
+  opacity: 1;
+  transition: opacity 1s; 
+}
+
+#username.fade {
+  opacity: 0;
+}

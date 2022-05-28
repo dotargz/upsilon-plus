@@ -47,16 +47,16 @@ export async function onRequest(context) {
   // now for custom css support, aaaaaaaaaaaaaa
   let forecolor;
   let backcolor;
-  try {
+  if (searchParams.get('forecolor') != null) {
     forecolor = searchParams.get('forecolor');
   }
-  catch {
+  else {
     forecolor = "ffffff";
   }
-  try {
+  if (searchParams.get('backcolor') != null) {
     backcolor = searchParams.get('backcolor');
   }
-  catch {
+  else {
     backcolor = "000000";
   }
   const html = `
@@ -120,13 +120,13 @@ export async function onRequest(context) {
   <style>
   @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
   #upsilon-card {
-    border: 2px solid ${backcolor};
-    background-color: ${backcolor};
+    border: 2px solid #${backcolor};
+    background-color: #${backcolor};
     border-radius: 2px;
     width: 100%;
     height: 85px;
     text-align: center;
-    color: ${forecolor};
+    color: #${forecolor};
     display: flex;
     align-items: center;
     justify-content: center;
@@ -140,9 +140,9 @@ export async function onRequest(context) {
   }
   a {
     text-decoration: underline;
-    color: ${forecolor};
+    color: #${forecolor};
     background-color: inherit;
-    border: 2px solid ${backcolor};
+    border: 2px solid #${backcolor};
     border-radius: 2px;
     margin-left: 5px;
   }
@@ -152,10 +152,10 @@ export async function onRequest(context) {
   }
   
   .hover-link:hover {
-    border: 2px solid ${forecolor};
+    border: 2px solid #${forecolor};
     border-radius: 5px;
-    color: ${backcolor};
-    background-color: ${forecolor};
+    color: #${backcolor};
+    background-color: #${forecolor};
   }
   </style>
   </body>

@@ -48,26 +48,28 @@ export async function onRequest(context) {
   let forecolor;
   let backcolor;
   let bordercolor;
+  // foreground color
   if (searchParams.get('forecolor') == null) {
     forecolor = "fff";
   }
   else {
     forecolor = searchParams.get('forecolor');
   }
+  // background color
   if (searchParams.get('backcolor') == null) {
     backcolor = "000";
   }
   else {
     backcolor = searchParams.get('backcolor');
-    if (backcolor == "fff" && searchParams.get('bordercolor') == null) {
-      bordercolor = "000";
-    } else if (backcolor == "fff" && searchParams.get('bordercolor') != null) {
-      bordercolor = searchParams.get('bordercolor');
-    }
-    else if (backcolor != "fff" && searchParams.get('bordercolor') == null) {
-      bordercolor = backcolor;
-    }
   }
+  // border color
+  if (searchParams.get('bordercolor') == null) {
+    bordercolor = backcolor;
+  }
+  else {
+    bordercolor = searchParams.get('bordercolor');
+  }
+
   const html = `
   <!DOCTYPE html>
   <html>

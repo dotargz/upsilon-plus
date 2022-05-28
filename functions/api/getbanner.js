@@ -10,6 +10,7 @@ export async function onRequest(context) {
   } = context;
   const { searchParams } = new URL(request.url);
   let user = searchParams.get('user');
+  // YOU CAN EDIT THIS
   let members = {
     BlueSkye: "https://blueskye.dev",
     Xan: "https://xan.lol",
@@ -17,7 +18,18 @@ export async function onRequest(context) {
     Qux: "https://github.com/qaxt"
   }
   if (user in members) {
+  // stolen from stackoverflow
+  var randomProperty = function (obj) {
+    var keys = Object.keys(obj);
+    return obj[keys[ keys.length * Math.random() << 0]];
+  };
   let website = members[user];
+
+  // to make next and last work we need to sort them
+  console.log(members[0])
+  let next = undefined;
+  let last = undefined;
+  let random = randomProperty(members);
   const html = `
   <!DOCTYPE html>
   <html>

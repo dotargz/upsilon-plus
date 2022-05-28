@@ -26,10 +26,22 @@ export async function onRequest(context) {
   let website = members[user];
 
   // to make next and last work we need to sort them
+  let keys = Object.keys(members)
   console.log(members[0])
   let next = undefined;
   let last = undefined;
   let random = randomProperty(members);
+  var size = Object.keys(members).length;
+  let nextIndex = keys.indexOf(user) +1;
+  if (nextIndex > size) {
+    let nextItem = 0
+  }
+  else { let nextItem = keys[nextIndex]; }
+  let lastIndex = keys.indexOf(user) -1;
+  if (lastIndex < size) {
+    let lastItem = size
+  }
+  else { let lastItem = keys[lastIndex]; }
   const html = `
   <!DOCTYPE html>
   <html>
@@ -86,7 +98,7 @@ export async function onRequest(context) {
   <body>
   <div id="upsilon-card">
   <h1><a href="https://upsilon.plus" class="hover-link" style="text-decoration:none;">Upsilon</a> + <a href="${website}" class="hover-link" style="text-decoration:none;">${user}</a></h1>
-  <span style="margin: 5px;"><a href="#" class="hover-link">before</a>  <a href="#" class="hover-link">random</a>  <a href="#" class="hover-link">next</a></span>
+  <span style="margin: 5px;"><a href="${lastItem}" class="hover-link">before</a>  <a href="${random}" class="hover-link">random</a>  <a href="${nextItem}" class="hover-link">next</a></span>
   </div>
   <style>
   @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');

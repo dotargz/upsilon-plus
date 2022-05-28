@@ -10,9 +10,14 @@ export async function onRequest(context) {
   } = context;
   const { searchParams } = new URL(request.url);
   let user = searchParams.get('user');
-  let members = ["BlueSkye", "Xan", "Nodex", "Qux"]
-  if (members.includes(user)) {
-  
+  let members = {
+    BlueSkye: "https://blueskye.dev",
+    Xan: "https://xan.lol",
+    Nodex: "https://nodex.hexx.page",
+    Qux: "https://github.com/qaxt"
+  }
+  if (user in members) {
+  let website = members[user];
   const html = `
   <!DOCTYPE html>
   <html>
@@ -68,7 +73,7 @@ export async function onRequest(context) {
   </style>
   <body>
   <div id="upsilon-card">
-  <h1><a href="https://upsilon.plus" class="hover-link" style="text-decoration:none;">Upsilon</a> + <a href="https://" class="hover-link" style="text-decoration:none;">${user}</a></h1>
+  <h1><a href="https://upsilon.plus" class="hover-link" style="text-decoration:none;">Upsilon</a> + <a href="${website}" class="hover-link" style="text-decoration:none;">${user}</a></h1>
   <span style="margin: 5px;"><a href="#" class="hover-link">before</a>  <a href="#" class="hover-link">random</a>  <a href="#" class="hover-link">next</a></span>
   </div>
   <style>

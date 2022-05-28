@@ -47,6 +47,7 @@ export async function onRequest(context) {
   // now for custom css support, aaaaaaaaaaaaaa
   let forecolor;
   let backcolor;
+  let bordercolor;
   if (searchParams.get('forecolor') == null) {
     forecolor = "fff";
   }
@@ -58,6 +59,11 @@ export async function onRequest(context) {
   }
   else {
     backcolor = searchParams.get('backcolor');
+    if (backcolor == "fff") {
+      bordercolor = "000";
+    } else {
+      bordercolor = backcolor;
+    }
   }
   const html = `
   <!DOCTYPE html>
@@ -120,7 +126,7 @@ export async function onRequest(context) {
   <style>
   @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
   #upsilon-card {
-    border: 2px solid #${backcolor};
+    border: 2px solid #${bordercolor};
     background-color: #${backcolor};
     border-radius: 2px;
     width: 100%;

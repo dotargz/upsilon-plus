@@ -45,17 +45,19 @@ export async function onRequest(context) {
   lastItem = keys[lastIndex];
 
   // now for custom css support, aaaaaaaaaaaaaa
+  let forecolor;
+  let backcolor;
   try {
-    let forecolor = searchParams.get('forecolor');
+    forecolor = searchParams.get('forecolor');
   }
   catch {
-    let forecolor = "ffffff";
+    forecolor = "ffffff";
   }
   try {
-    let backcolor = searchParams.get('backcolor');
+    backcolor = searchParams.get('backcolor');
   }
   catch {
-    let backcolor = "000000";
+    backcolor = "000000";
   }
   const html = `
   <!DOCTYPE html>

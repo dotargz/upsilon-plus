@@ -143,6 +143,7 @@ export async function onRequest(context) {
     justify-content: center;
     flex-direction: column;
     font-family: 'Noto Serif', serif;
+    margin: 5px;
   }
   h1 {
     font-weight: bolder;

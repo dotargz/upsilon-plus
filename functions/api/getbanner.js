@@ -125,8 +125,8 @@ export async function onRequest(context) {
   </style>
   <body>
   <div id="upsilon-card">
-  <h1><a href="https://upsilon.plus" class="hover-link" style="text-decoration:none;">Upsilon</a> + <a href="${website}" class="hover-link" style="text-decoration:none;">${user}</a></h1>
-  <span style="margin: 5px;"><a href="${members[lastItem]}" class="hover-link">before</a>  <a href="${random}" class="hover-link">random</a>  <a href="${members[nextItem]}" class="hover-link">next</a></span>
+  <h1><a href="https://upsilon.plus" class="hover-link" style="text-decoration:none;" target="_blank">Upsilon</a> + <a href="${website}" class="hover-link" style="text-decoration:none;" target="_blank">${user}</a></h1>
+  <span style="margin: 5px;"><a href="${members[lastItem]}" class="hover-link" target="_blank">before</a>  <a href="${random}" class="hover-link" target="_blank">random</a>  <a href="${members[nextItem]}" class="hover-link" target="_blank">next</a></span>
   </div>
   <style>
   @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');

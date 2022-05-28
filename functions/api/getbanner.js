@@ -131,9 +131,9 @@ export async function onRequest(context) {
   <style>
   @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
   #upsilon-card {
-    border: 2px solid #${bordercolor};
+    border: 3px solid #${bordercolor};
     background-color: #${backcolor};
-    border-radius: 2px;
+    border-radius: 5px;
     width: calc(100% - 10x);
     height: 85px;
     text-align: center;

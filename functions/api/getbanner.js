@@ -39,7 +39,7 @@ export async function onRequest(context) {
   }
   nextItem = keys[nextIndex];
   let lastIndex = keys.indexOf(user) -1;
-  if (lastIndex < size) {
+  if (lastIndex < 0) {
     lastIndex = size
   }
   lastItem = keys[lastIndex];

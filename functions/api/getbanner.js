@@ -134,7 +134,7 @@ export async function onRequest(context) {
     border: 3px solid #${bordercolor};
     background-color: #${backcolor};
     border-radius: 5px;
-    width: calc(100% - 10x);
+    width: calc(100%);
     height: 85px;
     text-align: center;
     color: #${forecolor};
@@ -143,7 +143,6 @@ export async function onRequest(context) {
     justify-content: center;
     flex-direction: column;
     font-family: 'Noto Serif', serif;
-    margin: 5px;
   }
   h1 {
     font-weight: bolder;

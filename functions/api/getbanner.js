@@ -59,7 +59,7 @@ export async function onRequest(context) {
   }
   else {
     backcolor = searchParams.get('backcolor');
-    if (backcolor == "fff") {
+    if (backcolor == "fff" && searchParams.get('bordercolor') == null) {
       bordercolor = "000";
     } else {
       bordercolor = backcolor;

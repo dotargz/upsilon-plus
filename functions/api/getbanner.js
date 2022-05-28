@@ -11,7 +11,7 @@ export async function onRequest(context) {
   const { searchParams } = new URL(request.url);
   let user = searchParams.get('user');
   let members = ["BlueSkye", "Xan", "Nodex", "Qux"]
-  if (user in members) {
+  if (members.includes(user)) {
   
   const html = `
   <!DOCTYPE html>

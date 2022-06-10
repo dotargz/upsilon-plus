@@ -1,6 +1,6 @@
 const delay = (n) => new Promise( r => setTimeout(r, n*1000));
 const div = document.getElementById("username");
-const members = ["BlueSkye", "Xan", "Nodex", "Qux", "You", "Anyone"]
+const members = ["BlueSkye", "Xan", "Nodex", "Qux", "BANana" ,"You", "Anyone"]
 let i = 0
 
 async function setmember() {

@@ -15,7 +15,8 @@ export async function onRequest(context) {
     BlueSkye: "https://blueskye.dev",
     Xan: "https://xan.lol",
     Nodex: "https://nodex.hexx.page",
-    Qux: "https://github.com/qaxt"
+    Qux: "https://github.com/qaxt",
+    BANana: "https://bananadev.ml/"
   }
   if (user in members) {
   // stolen from stackoverflow
